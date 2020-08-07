@@ -12,3 +12,9 @@ after_success:
   - docker build -t dohungthinhtin/multi-nginx ./nginx
   - docker build -t dohungthinhtin/multi-server ./server
   - docker build -t dohungthinhtin/multi-worker ./worker
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push dohungthinhtin/multi-client
+  - docker push dohungthinhtin/multi-nginx
+  - docker push dohungthinhtin/multi-server
+  - docker push dohungthinhtin/multi-worker
