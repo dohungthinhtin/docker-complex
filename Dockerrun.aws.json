@@ -6,21 +6,21 @@
       "image": "dohungthinhtin/multi-client",
       "hostname": "client",
       "essential": false,
-      "memory": 128
+      "memory": 200
     },
     {
       "name": "server",
       "image": "dohungthinhtin/multi-server",
       "hostname": "api",
       "essential": false,
-      "memory": 128
+      "memory": 200
     },
     {
       "name": "worker",
       "image": "dohungthinhtin/multi-worker",
       "hostname": "worker",
       "essential": false,
-      "memory": 128
+      "memory": 200
     },
     {
       "name": "nginx",
@@ -34,7 +34,7 @@
         }
       ],
       "links": ["client", "server"],
-      "memory": 128
+      "memory": 200
     }
   ]
 }
