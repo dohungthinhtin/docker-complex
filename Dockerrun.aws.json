@@ -9,6 +9,13 @@
       "memory": 128
     },
     {
+      "name": "server",
+      "image": "dohungthinhtin/multi-server",
+      "hostname": "api",
+      "essential": false,
+      "memory": 128
+    },
+    {
       "name": "nginx",
       "image": "dohungthinhtin/multi-nginx",
       "hostname": "nginx",
