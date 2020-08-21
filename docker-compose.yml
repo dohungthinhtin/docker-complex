@@ -10,7 +10,7 @@ services:
   nginx:
     restart: 'always'
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./nginx
     ports:
       - '3050:80'
@@ -18,7 +18,7 @@ services:
       - client
   api:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./server
     depends_on:
       - postgres
@@ -36,7 +36,7 @@ services:
       - PGPORT=5432
   client:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./client
     depends_on:
       - postgres
@@ -46,7 +46,7 @@ services:
       - ./client:/app
   worker:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./worker
     depends_on:
       - postgres
